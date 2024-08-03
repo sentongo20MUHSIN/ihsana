@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Favicons -->
+    <link href="assets/img/" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+
+        <!-- Sidebar -->
+        <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#newsSection">
+                            News
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#eventsSection">
+                            Events
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#servicesSection">
+                            Services
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Content -->
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Dashboard</h1>
+            </div>
+
+            <!-- File Upload Section -->
+            <div id="fileUploadSection">
+                <h2>File Upload</h2>
+                <form id="uploadForm" action="/upload" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="fileInput">Choose a file:</label>
+                        <input type="file" class="form-control-file" id="fileInput" name="fileInput" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Upload</button>
+                </form>
+            </div>
+
+            <!-- News Section -->
+            <div id="newsSection" class="mt-4">
+                <h2>News</h2>
+                <form id="newsForm" action="/upload-news" method="post">
+                    <div class="form-group">
+                        <label for="newsInput">Enter news content:</label>
+                        <textarea class="form-control" id="newsInput" name="newsInput" rows="3" placeholder="Type your news..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Publish News</button>
+                </form>
+            </div>
+
+            <!-- Events Section -->
+            <div id="eventsSection" class="mt-4">
+                <h2>Events</h2>
+                <form id="eventsForm" action="/schedule-event" method="post">
+                    <div class="form-group">
+                        <label for="eventInput">Enter event details:</label>
+                        <textarea class="form-control" id="eventInput" name="eventInput" rows="3" placeholder="Describe the event..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Schedule Event</button>
+                </form>
+            </div>
+
+            <!-- Services Section -->
+            <!-- Services Section -->
+<div id="servicesSection" class="mt-4">
+    <h2>Services</h2>
+    
+    <!-- Form for Text Description -->
+    <form id="servicesTextForm" action="/offer-service" method="post">
+        <div class="form-group">
+            <label for="serviceTextInput">Enter service details (text):</label>
+            <textarea class="form-control" id="serviceTextInput" name="serviceTextInput" rows="3" placeholder="Describe the service..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Offer Service (Text)</button>
+    </form>
+
+    <!-- Form for Card Details -->
+    <form id="servicesCardForm" action="/offer-service-cards" method="post">
+        <div class="form-group">
+            <label for="cardCategory">Select card category:</label>
+            <select class="form-control" id="cardCategory" name="cardCategory">
+                <option value="cardCategory1">Card Category 1</option>
+                <option value="cardCategory2">Card Category 2</option>
+                <!-- Add more card categories as needed -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="cardInput">Enter program details for the card:</label>
+            <textarea class="form-control" id="cardInput" name="cardInput" rows="3" placeholder="Program details for the card..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Offer Service (Card)</button>
+    </form>
+
+    <!-- Form for Pictures -->
+    <form id="servicesPicturesForm" action="/upload-service-pictures" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="servicePictureCategory">Select picture category:</label>
+            <select class="form-control" id="servicePictureCategory" name="servicePictureCategory">
+                <option value="serviceCategory1">Category 1</option>
+                <option value="serviceCategory2">Category 2</option>
+                <!-- Add more categories as needed -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="servicePictureInput">Choose pictures:</label>
+            <input type="file" class="form-control-file" id="servicePictureInput" name="servicePictureInput" required multiple>
+        </div>
+        <button type="submit" class="btn btn-primary">Upload Service Pictures</button>
+    </form>
+
+    <!-- Form for Testimonials -->
+    <form id="servicesTestimonialsForm" action="/upload-service-testimonials" method="post">
+        <div class="form-group">
+            <label for="serviceTestimonialsInput">Enter testimonials details:</label>
+            <textarea class="form-control" id="serviceTestimonialsInput" name="serviceTestimonialsInput" rows="3" placeholder="Provide testimonials details..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Upload Testimonials</button>
+    </form>
+</div>
+
+
+            <!-- About Section -->
+<div id="aboutSection" class="mt-4">
+    <h2>About Us</h2>
+    
+    <!-- History Section -->
+    <div id="historySection">
+        <h3>History</h3>
+        <!-- Form for Text Description -->
+        <form id="historyTextForm" action="/upload-history" method="post">
+            <div class="form-group">
+                <label for="historyTextInput">Enter history details (text):</label>
+                <textarea class="form-control" id="historyTextInput" name="historyTextInput" rows="3" placeholder="Provide history details..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Upload History (Text)</button>
+        </form>
+
+        <!-- Form for Pictures -->
+        <form id="historyPicturesForm" action="/upload-history-pictures" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="historyPictureCategory">Select picture category:</label>
+                <select class="form-control" id="historyPictureCategory" name="historyPictureCategory">
+                    <option value="historyCategory1">Category 1</option>
+                    <option value="historyCategory2">Category 2</option>
+                    <!-- Add more categories as needed -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="historyPictureInput">Choose pictures:</label>
+                <input type="file" class="form-control-file" id="historyPictureInput" name="historyPictureInput" required multiple>
+            </div>
+            <button type="submit" class="btn btn-primary">Upload History Pictures</button>
+        </form>
+    </div>
+
+    <!-- Vision, Mission, Values Section -->
+    <div id="visionMissionValuesSection" class="mt-4">
+        <h3>Vision, Mission, Values</h3>
+        <!-- Form for Text Description -->
+        <form id="visionMissionValuesForm" action="/upload-vision-mission-values" method="post">
+            <div class="form-group">
+                <label for="visionInput">Vision:</label>
+                <textarea class="form-control" id="visionInput" name="visionInput" rows="3" placeholder="Enter vision..."></textarea>
+            </div>
+            <div class="form-group">
+                <label for="missionInput">Mission:</label>
+                <textarea class="form-control" id="missionInput" name="missionInput" rows="3" placeholder="Enter mission..."></textarea>
+            </div>
+            <div class="form-group">
+                <label for="valuesInput">Values:</label>
+                <textarea class="form-control" id="valuesInput" name="valuesInput" rows="3" placeholder="Enter values..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Upload Vision, Mission, Values</button>
+        </form>
+    </div>
+
+    <!-- Administration Members Section -->
+    <div id="administrationMembersSection" class="mt-4">
+        <h3>Administration Members</h3>
+        <!-- Form for Members Information -->
+        <form id="adminMembersForm" action="/upload-admin-members" method="post">
+            <!-- Member 1 -->
+            <div class="form-group">
+                <label for="adminMember1Name">Name:</label>
+                <input type="text" class="form-control" id="adminMember1Name" name="adminMember1Name" required>
+            </div>
+            <div class="form-group">
+                <label for="adminMember1Duty">Duty:</label>
+                <input type="text" class="form-control" id="adminMember1Duty" name="adminMember1Duty" required>
+            </div>
+            <div class="form-group">
+                <label for="adminMember1Image">Upload Image:</label>
+                <input type="file" class="form-control-file" id="adminMember1Image" name="adminMember1Image" required>
+            </div>
+
+            <!-- Add more members as needed -->
+
+            <button type="submit" class="btn btn-primary">Upload Administration Members</button>
+        </form>
+    </div>
+</div>
+
+        </main>
+    </div>
+</div>
+
+<!-- Favicons -->
+<link href="assets/img/" rel="icon">
+<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+<!-- Vendor CSS Files -->
+<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<link href="assets/vendor/aos/aos.css" rel="stylesheet">
+<link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+<link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+<link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+
+<!-- Template Main CSS File -->
+<link href="assets/css/main.css" rel="stylesheet">
+
+</body>
+</html>
